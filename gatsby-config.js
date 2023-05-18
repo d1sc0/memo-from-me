@@ -69,12 +69,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-panelbear`,
-      options: {
-        siteID: 'CpkZWeIf3ez',
-      },
-    },
-    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -101,7 +95,7 @@ module.exports = {
             itunes: 'http://www.itunes.com/dtds/podcast-1.0.dtd',
           },
           custom_elements: [
-            { 'itunes:author': 'Another Talk Show' },
+            { 'itunes:author': 'Memo from me' },
             { 'itunes:explicit': 'false' },
             {
               'itunes:summary':
@@ -171,7 +165,7 @@ module.exports = {
                     { 'itunes:summary': node.frontmatter.description },
                     { 'itunes:episode': node.frontmatter.episodeNumber },
                     { 'itunes:duration': node.frontmatter.episodeSeconds },
-                    { 'itunes:author': 'Another Talk Show' },
+                    { 'itunes:author': 'Memo from me' },
                   ],
                 })
               })
@@ -211,7 +205,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/ats-logo.png`, // This path is relative to the root of the site.
+        icon: `src/images/mfm-logo.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
