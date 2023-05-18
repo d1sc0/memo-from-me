@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
         <div className="container is-max-widescreen pt-4">
           <div className="navbar-brand px-0">
             <Link
-              className="navbar-item has-text-weight-semibold is-size-4"
+              className="navbar-item has-text-weight-semibold site-title"
               to="/"
             >
               {data.site.siteMetadata.siteTitle}

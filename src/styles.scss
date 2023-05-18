@@ -92,7 +92,35 @@
       format('svg'); /* Legacy iOS */
   font-display: swap;
 }
+/* caveat-regular - latin */
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/caveat/caveat-v17-latin-regular.eot');
+  src: local(''), 
+    url('/fonts/caveat/caveat-v17-latin-regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/caveat/caveat-v17-latin-regular.woff2') format('woff2'),
+    url('/fonts/caveat/caveat-v17-latin-regular.woff') format('woff'),
+    url('/fonts/caveat/caveat-v17-latin-regular.ttf') format('truetype'),
+    url('/fonts/caveat/caveat-v17-latin-regular.svg#Caveat') format('svg');
+    font-display: swap;
+}
 
+/* caveat-700 - latin */
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/caveat/caveat-v17-latin-700.eot');
+  src: local(''), 
+    url('/fonts/caveat/caveat-v17-latin-700.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/caveat/caveat-v17-latin-700.woff2') format('woff2'),
+    url('/fonts/caveat/caveat-v17-latin-700.woff') format('woff'),
+    url('/fonts/caveat/caveat-v17-latin-700.ttf') format('truetype'),
+    url('/fonts/caveat/caveat-v17-latin-700.svg#Caveat') format('svg');
+    font-display: swap;
+}
 // End local fonts
 
 $family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, Roboto, Segoe UI,
@@ -102,6 +130,7 @@ $size-1: 2.8rem;
 $link: #eb1d1d;
 $weight-semibold: 700;
 $weight-bold: 800;
+
 .audioplayer {
   margin-top: 0.4rem;
   margin-bottom: 0.75rem;
@@ -144,6 +173,12 @@ footer a:hover {
 }
 .small-post-image .gatsby-image-wrapper {
   width: 20vw;
+}
+
+.site-title {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 3rem !important;
 }
 
 @import '~bulma/bulma.sass';
