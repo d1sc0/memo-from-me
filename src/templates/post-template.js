@@ -65,7 +65,7 @@ const PostTemplate = ({ data, children }) => {
           <MdEmail size="2rem" />
         </a>
       </div>
-      <Embed websiteId="8376" id={post.fields.slug} />
+      <Embed websiteId="8919" id={post.fields.slug} />
       <nav
         className="pagination py-4"
         role="navigation"
