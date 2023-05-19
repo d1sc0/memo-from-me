@@ -84,22 +84,45 @@ footer a:hover, .memo-title a:hover{
 .highlight {
   color: #4D9DE0;
 }
-.medium-post-image .gatsby-image-wrapper {
-  width: 40vw;
+
+.imageFull {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 10px;
 }
-.small-post-image .gatsby-image-wrapper {
-  width: 20vw;
+
+.imageLeft {
+  width: 50%;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  border-radius: 10px;
+  float: left !important;
+}
+
+.imageRight {
+  width: 50%;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  border-radius: 10px;
+  float: right !important;
 }
 
 .site-title {
   font-family: 'Caveat', cursive;
   font-weight: 700;
-  font-size: 4rem !important;
+  font-size: 3.5rem !important;
+}
+.memo-title-compact {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 2.6rem !important;
 }
 .memo-title {
   font-family: 'Caveat', cursive;
   font-weight: 700;
-  font-size: 2.6rem !important;
+  font-size: 4.2rem !important;
 }
 
 @include mobile { 
@@ -107,6 +130,23 @@ footer a:hover, .memo-title a:hover{
     flex-direction: column-reverse;
     display: flex;
   }
+    .imageFull {
+      border-radius: 10px;
+    }
+  
+    .imageLeft {
+      width: 100%;
+      margin: 0;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
+  
+    .imageRight {
+      width: 100%;
+      margin: 0;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
 }
 
 

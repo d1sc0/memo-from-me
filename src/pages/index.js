@@ -39,7 +39,7 @@ const HomePage = ({ data }) => {
             <p className="pt-4 is-uppercase has-text-weight-semibold is-size-7">
               Latest memo
             </p>
-            <p className="memo-title pt-0 mt-0">
+            <p className="memo-title-compact pt-0 mt-0">
               <Link to={episodeLink}>{episodeTitle}</Link>
             </p>
             <p className="is-uppercase is-size-7 py-2">

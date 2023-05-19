@@ -1,17 +1,24 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
+import { FaTwitter, FaFacebook } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
 import { EpisodeSizer, EpisodeDuration } from '../helpers/helper.js'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { getSrc } from 'gatsby-plugin-image'
+import { Embed } from 'hyvor-talk-react'
 import '../styles.scss'
 
 const PostTemplate = ({ data, children }) => {
   const post = data.mdx
+  const siteUrl = data.site.siteMetadata.siteUrl
   const socialImg = getSrc(post.frontmatter.socialImage)
   const episodeTitle = `${post.frontmatter.episodeNumber}: ${post.frontmatter.title}`
   const episodeSize = EpisodeSizer(post.frontmatter.episodeBytes, 2)
   const episodeLength = EpisodeDuration(post.frontmatter.episodeSeconds)
+  const facebookShare = `http://www.facebook.com/sharer.php?u=${siteUrl}/memos${post.fields.slug}`
+  const twitterShare = `https://twitter.com/intent/tweet?text=${episodeTitle} - ${siteUrl}/memos${post.fields.slug}`
+  const emailShare = `mailto:?subject=Check out this podcast episode site&body=${episodeTitle} - ${siteUrl}/memos${post.fields.slug}`
   const { previous, next } = data
   return (
     <Layout>
@@ -20,7 +27,7 @@ const PostTemplate = ({ data, children }) => {
         description={post.frontmatter.description || post.excerpt}
         imageUrl={socialImg}
       />
-      <h1 className="title is-size-2 mb-2">{episodeTitle}</h1>
+      <h1 className="title memo-title is-size-2 mb-2">{episodeTitle}</h1>
       <div className="postheader">
         <p className="is-uppercase is-size-7 mb-4">
           {post.frontmatter.tags.map(tag => {
@@ -46,7 +53,19 @@ const PostTemplate = ({ data, children }) => {
       </audio>
 
       <div className="content mt-4">{children}</div>
-
+      <p className="is-uppercase is-size-7 mb-2">SHARE THIS MEMO</p>
+      <div className="is-aligned-left">
+        <a className="mr-4" href={twitterShare} title="share on twitter">
+          <FaTwitter size="2rem" />
+        </a>
+        <a className="mr-4" href={facebookShare} title="share on facebook">
+          <FaFacebook size="2rem" />
+        </a>
+        <a className="mr-4" href={emailShare} title="share via email">
+          <MdEmail size="2rem" />
+        </a>
+      </div>
+      <Embed websiteId="8376" id={post.fields.slug} />
       <nav
         className="pagination py-4"
         role="navigation"
@@ -88,6 +107,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         siteTitle
+        siteUrl
       }
     }
     mdx(id: { eq: $id }) {
