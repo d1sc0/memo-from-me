@@ -20,8 +20,8 @@ const HomePage = ({ data }) => {
           {/* is-reversed-mobile */}
           <div className="column is-two-fifths">
             <StaticImage
-              alt="memos from me!"
-              src="../images/haring-podcast.png"
+              alt="memo from me!"
+              src="../images/memo-from-me-square.png"
               className="rounded-corners"
             />
           </div>
