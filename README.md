@@ -11,7 +11,7 @@ Memo From Me
 - ~~create component for post metadata and sharing~~ done
 - ~~Host on firebase and setup actions for deploy pipeline~~ done
 - ~~move fonts to local~~ done
-- ~~update to latest version of Gatsby ~~ - done
+- ~~update to latest version of Gatsby~~ - done
 - ~~adding tag pages~~ done
 
 - Finish logo and graphics
