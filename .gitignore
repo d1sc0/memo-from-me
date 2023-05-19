@@ -70,4 +70,4 @@ yarn-error.log
 
 # old template markdown posts
 archived posts/
-.psd
+*.psd
