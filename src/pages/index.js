@@ -10,7 +10,7 @@ import { SiGooglepodcasts } from 'react-icons/si'
 
 const HomePage = ({ data }) => {
   const latestPost = data.allMdx.nodes[0]
-  const episodeTitle = `Episode ${latestPost.frontmatter.episodeNumber}: ${latestPost.frontmatter.title}`
+  const episodeTitle = `${latestPost.frontmatter.episodeNumber}: ${latestPost.frontmatter.title}`
   const postMeta = {
     episodeSeconds: latestPost.frontmatter.episodeSeconds,
     episodeBytes: latestPost.frontmatter.episodeBytes,
@@ -18,6 +18,7 @@ const HomePage = ({ data }) => {
     episodeSlug: latestPost.fields.slug,
     episodeDate: latestPost.frontmatter.date,
     metaStlye: 'has-text-white mr-4',
+    tags: latestPost.frontmatter.tags,
   }
   return (
     <Layout>
@@ -49,10 +50,10 @@ const HomePage = ({ data }) => {
       <div className="section px-3">
         <div className="columns rounded-corners has-background-grey-dark has-text-white p-3">
           <div className="column is-two-fifths">
-            LATEST EPISODE
+            LATEST MEMO
             <h2 className="is-size-3 is-size-4-touch has-text-weight-semibold py-2">
               <Link
-                to={`/episodes${latestPost.fields.slug}`}
+                to={`/memos${latestPost.fields.slug}`}
                 className="has-text-white"
               >
                 {episodeTitle}
@@ -75,10 +76,10 @@ const HomePage = ({ data }) => {
             <div>{latestPost.frontmatter.description}</div>
             <div className="py-2 has-text-right">
               <Link
-                to="/episodes"
+                to="/memos"
                 className="is-size-5 has-text-white has-text-weight-semibold"
               >
-                [...More Episodes]
+                [...More Memos]
               </Link>
             </div>
           </div>
@@ -145,6 +146,7 @@ export const pageQuery = graphql`
           title
           date(formatString: "DD MMM YYYY")
           description
+          tags
           episodeMp3
           episodeBytes
           episodeSeconds

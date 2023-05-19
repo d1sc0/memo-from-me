@@ -54,8 +54,8 @@ const Layout = ({ children }) => {
               <Link to="/about" className="navbar-item">
                 About
               </Link>
-              <Link to="/episodes" className="navbar-item">
-                Episodes
+              <Link to="/memos" className="navbar-item">
+                Memos
               </Link>
               <Link to="/contact" className="navbar-item">
                 Contact
@@ -110,7 +110,7 @@ const Layout = ({ children }) => {
           {' // '}
           <Link to="/about">About</Link>
           {' // '}
-          <Link to="/episodes">Episodes</Link>
+          <Link to="/Memos">Memos</Link>
           {' // '}
           <Link to="/contact">Contact</Link>
           {' // '}

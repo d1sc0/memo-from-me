@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Link, graphql } from 'gatsby'
-//import { MDXRenderer } from 'gatsby-plugin-mdx'
-import PostHeader from '../components/postheader'
+import { EpisodeSizer, EpisodeDuration } from '../helpers/helper.js'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { getSrc } from 'gatsby-plugin-image'
@@ -10,16 +9,9 @@ import '../styles.scss'
 const PostTemplate = ({ data, children }) => {
   const post = data.mdx
   const socialImg = getSrc(post.frontmatter.socialImage)
-  const episodeTitle = `Episode ${post.frontmatter.episodeNumber}: ${post.frontmatter.title}`
-  const postMeta = {
-    episodeSeconds: post.frontmatter.episodeSeconds,
-    episodeBytes: post.frontmatter.episodeBytes,
-    episodeTitle: episodeTitle,
-    episodeSlug: post.fields.slug,
-    episodeDate: post.frontmatter.date,
-    episodeMp3: post.frontmatter.episodeMp3,
-    metaStlye: 'mr-4',
-  }
+  const episodeTitle = `${post.frontmatter.episodeNumber}: ${post.frontmatter.title}`
+  const episodeSize = EpisodeSizer(post.frontmatter.episodeBytes, 2)
+  const episodeLength = EpisodeDuration(post.frontmatter.episodeSeconds)
   const { previous, next } = data
   return (
     <Layout>
@@ -28,12 +20,32 @@ const PostTemplate = ({ data, children }) => {
         description={post.frontmatter.description || post.excerpt}
         imageUrl={socialImg}
       />
-      <h1 className="title is-size-2">{episodeTitle}</h1>
-      <PostHeader meta={postMeta} />
-      <div className="content mt-4">
-        {/* <MDXRenderer frontmatter={post.frontmatter}>{post.body}</MDXRenderer> */}
-        {children}
+      <h1 className="title is-size-2 mb-2">{episodeTitle}</h1>
+      <div className="postheader">
+        <p className="is-uppercase is-size-7 mb-4">
+          {post.frontmatter.tags.map(tag => {
+            return (
+              <span key={tag} className="tag is-light mr-2">
+                <Link to={`/tags/${tag}`} className="is-uppercase">
+                  {tag}
+                </Link>
+              </span>
+            )
+          })}
+        </p>
+        <p className="is-uppercase is-size-7 mb-2">
+          Posted: {post.frontmatter.episodeDate} &#x2f;&#x2f; Duration:{' '}
+          {episodeLength}
+          &#x2f;&#x2f; Size: {episodeSize}
+        </p>
       </div>
+      <audio className="audioplayer" src={post.frontmatter.episodeMp3} controls>
+        Your browser does not support the audio player!{' '}
+        <a href={post.frontmatter.episodeMp3}>You can download here instead</a>
+        <track kind="captions" label={episodeTitle} />
+      </audio>
+
+      <div className="content mt-4">{children}</div>
 
       <nav
         className="pagination py-4"
@@ -42,25 +54,25 @@ const PostTemplate = ({ data, children }) => {
       >
         <div className="container">
           <h4 className="is-size-6 has-text-weight-bold py-3">
-            Explore more episodes...
+            Explore more memos...
           </h4>
           {previous && (
             <Link
-              to={`/episodes${previous.fields.slug}`}
+              to={`/memos${previous.fields.slug}`}
               className="pagination-previous"
               rel="prev"
             >
-              ← EP{previous.frontmatter.episodeNumber}:
+              ← {previous.frontmatter.episodeNumber}:{' '}
               {previous.frontmatter.title}
             </Link>
           )}
           {next && (
             <Link
-              to={`/episodes${next.fields.slug}`}
+              to={`/memos${next.fields.slug}`}
               className="pagination-next"
               rel="next"
             >
-              EP{next.frontmatter.episodeNumber}: {next.frontmatter.title} →
+              {next.frontmatter.episodeNumber}: {next.frontmatter.title} →
             </Link>
           )}
         </div>
@@ -89,6 +101,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "DD MMM YYYY")
         description
+        tags
         episodeMp3
         episodeBytes
         episodeSeconds

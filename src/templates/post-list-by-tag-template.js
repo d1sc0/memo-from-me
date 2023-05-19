@@ -5,17 +5,14 @@ import Layout from '../components/layout'
 import MetaShare from '../components/metashare'
 import '../styles.scss'
 
-const PostList = ({ data, pageContext }) => {
+const PostsByTagList = ({ data, pageContext }) => {
   const posts = data.allMdx.nodes
-  const { currentPage, numPages } = pageContext
+  const { tagName, currentPage, numTagPages } = pageContext
   const isFirst = currentPage === 1
-  const isLast = currentPage === numPages
+  const isLast = currentPage === numTagPages
   const prevPage = currentPage - 1 === 1 ? '' : (currentPage - 1).toString()
   const nextPage = (currentPage + 1).toString()
-  let pageTitle = 'Episodes'
-  if (isFirst) {
-    pageTitle = 'Latest Memos'
-  }
+  const pageTitle = `Tagged: ${tagName}`
   return (
     <Layout>
       <Seo title={pageTitle} />
@@ -77,47 +74,42 @@ const PostList = ({ data, pageContext }) => {
           </>
         )
       })}
-
       {!isFirst && (
-        <nav
-          className="pagination py-4 is-pulled-left"
-          role="navigation"
-          aria-label="pagination"
+        <Link
+          to={`/tags/${tagName}/${prevPage}`}
+          className="pagination-previous is-pulled-left"
+          rel="prev"
         >
-          <Link
-            to={`/memos/${prevPage}`}
-            className="pagination-previous"
-            rel="prev"
-          >
-            Previous Page
-          </Link>
-        </nav>
+          Previous Page
+        </Link>
       )}
       {!isLast && (
-        <nav
-          className="pagination py-4 is-pulled-right"
-          role="navigation"
-          aria-label="pagination"
+        <Link
+          to={`/tags/${tagName}/${nextPage}`}
+          className="pagination-next is-pulled-right"
+          rel="next"
         >
-          <Link
-            to={`/memos/${nextPage}`}
-            className="pagination-next"
-            rel="next"
-          >
-            Next Page
-          </Link>
-        </nav>
+          Next Page
+        </Link>
       )}
     </Layout>
   )
 }
 
-export default PostList
+export default PostsByTagList
 
-export const postListQuery = graphql`
-  query postListQuery($skip: Int!, $limit: Int!) {
-    allMdx(sort: { frontmatter: { date: DESC } }, limit: $limit, skip: $skip) {
+export const PostsByTagListQuery = graphql`
+  query PostsByTagListQuery($tagName: String, $skip: Int!, $limit: Int!) {
+    allMdx(
+      sort: { frontmatter: { date: DESC } }
+      filter: { frontmatter: { tags: { in: [$tagName] } } }
+      limit: $limit
+      skip: $skip
+    ) {
       nodes {
+        fields {
+          slug
+        }
         id
         excerpt(pruneLength: 480)
         frontmatter {
@@ -129,9 +121,6 @@ export const postListQuery = graphql`
           episodeBytes
           episodeSeconds
           episodeNumber
-        }
-        fields {
-          slug
         }
       }
     }

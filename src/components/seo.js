@@ -28,7 +28,7 @@ const Seo = ({ description, lang, meta, title, imageUrl }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const graphImage = imageUrl || '/ats-small.png'
+  const graphImage = imageUrl || '/mfm-small.png'
   const graphUrl = site.siteMetadata.siteUrl + graphImage
   const defaultTitle = site.siteMetadata?.siteTitle
 
