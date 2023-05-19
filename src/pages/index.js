@@ -23,31 +23,7 @@ const HomePage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Home" />
-      <div className="section px-0 py-0">
-        <div className="columns">
-          <div className="column is-three-fifths">
-            <StaticImage
-              alt="another talk show cartoon logo illustartion of host talking!"
-              src="../images/page-images/another-talk-show-home.jpg"
-              className="rounded-corners"
-            />
-          </div>
-          <div className="column">
-            <p className="is-size-1 is-size-3-touch has-text-weight-bold">
-              A fairly <span className="highlight">ordinary host</span>{' '}
-              interviews <span className="highlight">interesting people</span>{' '}
-              who aren't famous.
-            </p>
-            <p className="is-size-5 pt-3">
-              <Link to="/about" className="has-text-weight-semibold">
-                Find out more...
-              </Link>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="section px-3">
+      {/* <div className="section px-3">
         <div className="columns rounded-corners has-background-grey-dark has-text-white p-3">
           <div className="column is-two-fifths">
             LATEST MEMO
@@ -85,9 +61,54 @@ const HomePage = ({ data }) => {
           </div>
         </div>
       </div>
+ */}
+      <div className="section px-0 pt-0 pb-6">
+        <div className="columns">
+          <div className="column is-two-fifths">
+            <StaticImage
+              alt="another talk show cartoon logo illustartion of host talking!"
+              src="../images/haring-podcast.png"
+              className="rounded-corners"
+            />
+          </div>
+          <div className="column">
+            <p className="is-size-1 is-size-3-touch has-text-weight-bold">
+              A fairly <span className="highlight">ordinary host</span>{' '}
+              interviews <span className="highlight">interesting people</span>{' '}
+              who aren't famous.
+            </p>
+            <p className="is-size-5 pt-3">
+              <Link to="/about" className="has-text-weight-semibold">
+                Find out more...
+              </Link>
+            </p>
+            <audio
+              className="audioplayer"
+              src={latestPost.frontmatter.episodeMp3}
+              controls
+            >
+              Your browser does not support the audio player!{' '}
+              <a href={latestPost.frontmatter.episodeMp3}>
+                You can download here instead
+              </a>
+              <track kind="captions" label={episodeTitle} />
+            </audio>
+            <div>{latestPost.frontmatter.description}</div>
+            <div className="py-2 has-text-right">
+              <Link
+                to="/memos"
+                className="is-size-5 has-text-white has-text-weight-semibold"
+              >
+                [...More Memos]
+              </Link>
+            </div>
+            <p></p>
+          </div>
+        </div>
+      </div>
 
-      <div className="section p-0 has-text-centered">
-        <p className="is-size-5 pb-3">Subscribe with your favourite player</p>
+      <div className="section p-0 pb-3 has-text-centered">
+        <p className="is-size-5 p-0">Subscribe with your favourite player</p>
       </div>
       <div className="columns mb-0">
         <div className="column">
