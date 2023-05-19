@@ -39,11 +39,13 @@
 
 $family-sans-serif: Roboto, -apple-system, BlinkMacSystemFont,  Segoe UI,
   Helvetica, Arial, sans-serif;
-$text: hsl(0, 0%, 14%);
+$text: #000505;
 $size-1: 2.8rem;
-$link: #eb1d1d;
+$link: #4D9DE0;
 $weight-semibold: 700;
 $weight-bold: 800;
+
+@import '~bulma/bulma.sass';
 
 .audioplayer {
   margin-top: 0.4rem;
@@ -54,11 +56,11 @@ $weight-bold: 800;
   padding-left: 1rem;
   padding-right: 1rem;
 }
-footer a {
-  color: hsl(0, 0%, 14%);
+footer a, .memo-title a {
+  color: #000505;
 }
-footer a:hover {
-  color: #eb1d1d;
+footer a:hover, .memo-title a:hover{
+  color: #4D9DE0;
 }
 
 .episode-card {
@@ -73,14 +75,14 @@ footer a:hover {
 }
 
 .button.is-black:hover {
-  background-color: #eb1d1d !important;
+  background-color: #4D9DE0 !important;
 }
 .rounded-corners,
 .button.is-black {
   border-radius: 10px;
 }
 .highlight {
-  color: #eb1d1d;
+  color: #4D9DE0;
 }
 .medium-post-image .gatsby-image-wrapper {
   width: 40vw;
@@ -94,5 +96,17 @@ footer a:hover {
   font-weight: 700;
   font-size: 4rem !important;
 }
+.memo-title {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 2.6rem !important;
+}
 
-@import '~bulma/bulma.sass';
+@include mobile { 
+  .columns.is-reversed-mobile {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+}
+
+

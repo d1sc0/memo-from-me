@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import MetaShare from '../components/metashare'
 import { Link, graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import '../styles.scss'
@@ -10,77 +9,51 @@ import { SiGooglepodcasts } from 'react-icons/si'
 
 const HomePage = ({ data }) => {
   const latestPost = data.allMdx.nodes[0]
-  const episodeTitle = `${latestPost.frontmatter.episodeNumber}: ${latestPost.frontmatter.title}`
-  const postMeta = {
-    episodeSeconds: latestPost.frontmatter.episodeSeconds,
-    episodeBytes: latestPost.frontmatter.episodeBytes,
-    episodeTitle: episodeTitle,
-    episodeSlug: latestPost.fields.slug,
-    episodeDate: latestPost.frontmatter.date,
-    metaStlye: 'has-text-white mr-4',
-    tags: latestPost.frontmatter.tags,
-  }
+  const episodeTitle = `${latestPost.frontmatter.title}`
+  const episodeLink = `/memos${latestPost.fields.slug}`
+
   return (
     <Layout>
       <Seo title="Home" />
-      {/* <div className="section px-3">
-        <div className="columns rounded-corners has-background-grey-dark has-text-white p-3">
-          <div className="column is-two-fifths">
-            LATEST MEMO
-            <h2 className="is-size-3 is-size-4-touch has-text-weight-semibold py-2">
-              <Link
-                to={`/memos${latestPost.fields.slug}`}
-                className="has-text-white"
-              >
-                {episodeTitle}
-              </Link>
-            </h2>
-            <MetaShare meta={postMeta} />
-          </div>
-          <div className="column">
-            <audio
-              className="audioplayer"
-              src={latestPost.frontmatter.episodeMp3}
-              controls
-            >
-              Your browser does not support the audio player!{' '}
-              <a href={latestPost.frontmatter.episodeMp3}>
-                You can download here instead
-              </a>
-              <track kind="captions" label={episodeTitle} />
-            </audio>
-            <div>{latestPost.frontmatter.description}</div>
-            <div className="py-2 has-text-right">
-              <Link
-                to="/memos"
-                className="is-size-5 has-text-white has-text-weight-semibold"
-              >
-                [...More Memos]
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
- */}
-      <div className="section px-0 pt-0 pb-6">
-        <div className="columns">
+      <div className="section px-0 pt-0 pb-5">
+        <div className="columns is-reversed-mobile">
           <div className="column is-two-fifths">
             <StaticImage
-              alt="another talk show cartoon logo illustartion of host talking!"
+              alt="memos from me!"
               src="../images/haring-podcast.png"
               className="rounded-corners"
             />
           </div>
           <div className="column">
-            <p className="is-size-1 is-size-3-touch has-text-weight-bold">
-              A fairly <span className="highlight">ordinary host</span>{' '}
-              interviews <span className="highlight">interesting people</span>{' '}
-              who aren't famous.
-            </p>
-            <p className="is-size-5 pt-3">
-              <Link to="/about" className="has-text-weight-semibold">
-                Find out more...
+            <p className="is-size-2 is-size-3-touch has-text-weight-bold">
+              A podcast of{' '}
+              <Link to="/about">
+                <span className="highlight">voice memos,</span>
+              </Link>{' '}
+              shared openly for those that want to{' '}
+              <Link to="/about">
+                <span className="highlight">hear them</span>
+                ...
               </Link>
+            </p>
+            <p className="pt-4 is-uppercase has-text-weight-semibold is-size-7">
+              Latest memo
+            </p>
+            <p className="memo-title pt-0 mt-0">
+              <Link to={episodeLink}>{episodeTitle}</Link>
+            </p>
+            <p className="is-uppercase is-size-7 py-2">
+              Posted: {latestPost.frontmatter.date} &#x2f;&#x2f; Filed under:{' '}
+              {latestPost.frontmatter.tags.map(tag => {
+                return (
+                  <span
+                    key={tag}
+                    className="tag has-text-weight-medium mr-2 is-uppercase"
+                  >
+                    <Link to={`/tags/${tag}`}>{tag}</Link>
+                  </span>
+                )
+              })}
             </p>
             <audio
               className="audioplayer"
@@ -93,16 +66,12 @@ const HomePage = ({ data }) => {
               </a>
               <track kind="captions" label={episodeTitle} />
             </audio>
-            <div>{latestPost.frontmatter.description}</div>
-            <div className="py-2 has-text-right">
-              <Link
-                to="/memos"
-                className="is-size-5 has-text-white has-text-weight-semibold"
-              >
-                [...More Memos]
-              </Link>
-            </div>
-            <p></p>
+
+            <p className="is-size-7 py-2 has-text-right">
+              <span className="is-uppercase has-text-weight-medium tag">
+                <Link to="/memos">Explore more memos</Link>
+              </span>
+            </p>
           </div>
         </div>
       </div>

@@ -110,7 +110,7 @@ const Layout = ({ children }) => {
           {' // '}
           <Link to="/about">About</Link>
           {' // '}
-          <Link to="/Memos">Memos</Link>
+          <Link to="/memos">Memos</Link>
           {' // '}
           <Link to="/contact">Contact</Link>
           {' // '}
