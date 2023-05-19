@@ -11,7 +11,7 @@ import '../styles.scss'
 
 const PostTemplate = ({ data, children }) => {
   const post = data.mdx
-  const siteUrl = data.site.siteMetadata.siteUrl
+  //const siteUrl = data.site.siteMetadata.siteUrl
   const socialImg = getSrc(post.frontmatter.socialImage)
   const episodeTitle = `${post.frontmatter.episodeNumber}: ${post.frontmatter.title}`
   const episodeSize = EpisodeSizer(post.frontmatter.episodeBytes, 2)
