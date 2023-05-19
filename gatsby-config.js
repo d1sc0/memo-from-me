@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteTitle: `Memo from me`,
     description: `Memo from me is a podcast of recorded voice memos on a variety of subjects.`,
-    siteUrl: `https://memofromme.com`,
+    siteUrl: `https://memofrom.me`,
     social: {
       twitter: `_ordinaryhost`,
     },
@@ -84,8 +84,8 @@ module.exports = {
         `,
         setup: options => ({
           ...options,
-          feed_url: 'https://memofromme.com/podcast.xml',
-          site_url: 'https://memofromme.com/',
+          feed_url: 'https://memofrom.me/podcast.xml',
+          site_url: 'https://memofrom.me/',
           description:
             'Memo From Me is a podcast of recorded voice memos on a variety of subjects.',
           generator: 'Memo from me',
@@ -104,13 +104,13 @@ module.exports = {
             {
               'itunes:owner': [
                 { 'itunes:name': 'Stuart Mackenzie' },
-                { 'itunes:email': 'mail@hellostu.xyz' },
+                { 'itunes:email': 'mail@memofrom.me' },
               ],
             },
             {
               'itunes:image': {
                 _attr: {
-                  href: 'https://memofromme.com/mfm_cover_art.png',
+                  href: 'https://memofrom.me/mfm_cover_art.png',
                 },
               },
             },
