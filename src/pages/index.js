@@ -16,7 +16,8 @@ const HomePage = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <div className="section px-0 pt-0 pb-5">
-        <div className="columns is-reversed-mobile">
+        <div className="columns">
+          {/* is-reversed-mobile */}
           <div className="column is-two-fifths">
             <StaticImage
               alt="memos from me!"
