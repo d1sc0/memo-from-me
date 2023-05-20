@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Seo from '../components/seo'
 import Layout from '../components/layout'
-import MetaShare from '../components/metashare'
 import '../styles.scss'
 
 const PostsByTagList = ({ data, pageContext }) => {
@@ -19,15 +18,7 @@ const PostsByTagList = ({ data, pageContext }) => {
       <h1 className="title is-size-2">{pageTitle}</h1>
       {posts.map(post => {
         const episodeTitle = `${post.frontmatter.episodeNumber}: ${post.frontmatter.title}`
-        const postMeta = {
-          episodeSeconds: post.frontmatter.episodeSeconds,
-          episodeBytes: post.frontmatter.episodeBytes,
-          episodeTitle: episodeTitle,
-          episodeSlug: post.fields.slug,
-          episodeDate: post.frontmatter.date,
-          metaStlye: 'mr-4',
-          tags: post.frontmatter.tags,
-        }
+
         return (
           <>
             <div className="article px-3 py-5">
@@ -42,7 +33,6 @@ const PostsByTagList = ({ data, pageContext }) => {
                         {episodeTitle}
                       </Link>
                     </h2>
-                    <MetaShare meta={postMeta} />
                   </div>
                 </div>
                 <div className="column is-vcentered">

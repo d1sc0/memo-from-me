@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Seo from '../components/seo'
 import Layout from '../components/layout'
-import MetaShare from '../components/metashare'
+//import MetaShare from '../components/metashare'
 import '../styles.scss'
 
 const PostList = ({ data, pageContext }) => {
@@ -12,7 +12,7 @@ const PostList = ({ data, pageContext }) => {
   const isLast = currentPage === numPages
   const prevPage = currentPage - 1 === 1 ? '' : (currentPage - 1).toString()
   const nextPage = (currentPage + 1).toString()
-  let pageTitle = 'Episodes'
+  let pageTitle = 'Memos'
   if (isFirst) {
     pageTitle = 'Latest Memos'
   }
@@ -22,30 +22,34 @@ const PostList = ({ data, pageContext }) => {
       <h1 className="title is-size-2">{pageTitle}</h1>
       {posts.map(post => {
         const episodeTitle = `${post.frontmatter.episodeNumber}: ${post.frontmatter.title}`
-        const postMeta = {
-          episodeSeconds: post.frontmatter.episodeSeconds,
-          episodeBytes: post.frontmatter.episodeBytes,
-          episodeTitle: episodeTitle,
-          episodeSlug: post.fields.slug,
-          episodeDate: post.frontmatter.date,
-          metaStlye: 'mr-4',
-          tags: post.frontmatter.tags,
-        }
+
         return (
           <>
             <div className="article px-3 py-5">
               <div className="columns rounded-corners episode-card">
-                <div className="column is-two-fifths">
+                <div className="column is-three-fifths">
                   <div className="px-3">
                     <h2 className="is-size-3 is-size-4-touch has-text-weight-semibold">
                       <Link
                         to={`/memos${post.fields.slug}`}
-                        className="episode-link"
+                        className="memo-title-compact episode-link"
                       >
                         {episodeTitle}
                       </Link>
                     </h2>
-                    <MetaShare meta={postMeta} />
+                    <p className="is-uppercase is-size-7 mb-4">
+                      Posted: {latestPost.frontmatter.date} &#x2f;&#x2f; Filed
+                      under:{' '}
+                      {post.frontmatter.tags.map(tag => {
+                        return (
+                          <span key={tag} className="tag mr-2">
+                            <Link to={`/tags/${tag}`} className="is-uppercase">
+                              {tag}
+                            </Link>
+                          </span>
+                        )
+                      })}
+                    </p>
                   </div>
                 </div>
                 <div className="column is-vcentered">
@@ -61,14 +65,12 @@ const PostList = ({ data, pageContext }) => {
                       </a>
                       <track kind="captions" label={episodeTitle} />
                     </audio>
-                    <p>
-                      <strong>Show Notes: </strong>
-                      {post.excerpt}{' '}
-                      <strong>
+                    <p className="is-size-7 py-2 has-text-right">
+                      <span className="is-uppercase has-text-weight-medium tag">
                         <Link to={`/memos${post.fields.slug}`}>
-                          [Read more...]
+                          Accompanying Notes...
                         </Link>
-                      </strong>
+                      </span>
                     </p>
                   </div>
                 </div>

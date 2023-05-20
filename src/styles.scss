@@ -64,9 +64,12 @@ footer a:hover, .memo-title a:hover{
 }
 
 .episode-card {
-  border-color: #dbdbdb;
   border-width: 2px;
-  border-style: solid;
+  border-style: none;
+  background-color: #c2daed;
+}
+.episode-link {
+  color:#000505;
 }
 
 .subtle-link,
@@ -149,4 +152,9 @@ footer a:hover, .memo-title a:hover{
     }
 }
 
-
+.tag a {
+  color: #000505
+}
+.tag a:hover {
+  color: #4D9DE0
+}
