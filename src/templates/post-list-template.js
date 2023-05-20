@@ -38,8 +38,7 @@ const PostList = ({ data, pageContext }) => {
                       </Link>
                     </h2>
                     <p className="is-uppercase is-size-7 mb-4">
-                      Posted: {latestPost.frontmatter.date} &#x2f;&#x2f; Filed
-                      under:{' '}
+                      Posted: {post.frontmatter.date} &#x2f;&#x2f; Filed under:{' '}
                       {post.frontmatter.tags.map(tag => {
                         return (
                           <span key={tag} className="tag mr-2">
