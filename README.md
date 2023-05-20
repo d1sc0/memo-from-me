@@ -14,8 +14,8 @@ Memo From Me
 - ~~update to latest version of Gatsby~~ - done
 - ~~adding tag pages~~ done
 
-- Finish logo and graphics
-- create twitter and insta accounts
+- ~~Finish logo and graphics~~ done (for now)
+- ~~create twitter and insta accounts~~ done
 - update all social links
 - update contact form page destination
 - re-write about page and update short descriptions

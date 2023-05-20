@@ -3,9 +3,6 @@ module.exports = {
     siteTitle: `Memo from me`,
     description: `A podcast of voice memos, shared openly for those that want to hear them.`,
     siteUrl: `https://memofrom.me`,
-    social: {
-      twitter: `_ordinaryhost`,
-    },
   },
   plugins: [
     `gatsby-plugin-sass`,

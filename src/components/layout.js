@@ -76,11 +76,11 @@ const Layout = ({ children }) => {
 
       <footer className="footer has-background-white pb-3">
         <p className="has-text-centered py-1 ficons">
-          <a href="https://twitter.com/ordinaryhost" title="follow on twitter">
+          <a href="https://twitter.com/memo_from_me" title="follow on twitter">
             <FaTwitter size="1.9rem" />
           </a>
           <a
-            href="https://www.instagram.com/anothertalk.show/"
+            href="https://www.instagram.com/memofrom.me/"
             title="follow on instagram"
           >
             <FaInstagram size="1.9rem" />
