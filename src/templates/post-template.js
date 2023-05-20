@@ -37,8 +37,7 @@ const PostTemplate = ({ data, children }) => {
         </p>
         <p className="is-uppercase is-size-7 mb-2">
           Posted: {post.frontmatter.episodeDate} &#x2f;&#x2f; Duration:{' '}
-          {episodeLength}
-          &#x2f;&#x2f; Size: {episodeSize}
+          {episodeLength} &#x2f;&#x2f; Size: {episodeSize}
         </p>
       </div>
       <audio className="audioplayer" src={post.frontmatter.episodeMp3} controls>

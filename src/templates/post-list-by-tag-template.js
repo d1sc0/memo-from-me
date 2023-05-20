@@ -11,7 +11,8 @@ const PostsByTagList = ({ data, pageContext }) => {
   const isLast = currentPage === numTagPages
   const prevPage = currentPage - 1 === 1 ? '' : (currentPage - 1).toString()
   const nextPage = (currentPage + 1).toString()
-  const pageTitle = `Tagged: ${tagName}`
+  const tagUpper = tagName.toUpperCase()
+  const pageTitle = `Tagged: ${tagUpper}`
   return (
     <Layout>
       <Seo title={pageTitle} />
@@ -23,16 +24,28 @@ const PostsByTagList = ({ data, pageContext }) => {
           <>
             <div className="article px-3 py-5">
               <div className="columns rounded-corners episode-card">
-                <div className="column is-two-fifths">
+                <div className="column is-three-fifths">
                   <div className="px-3">
                     <h2 className="is-size-3 is-size-4-touch has-text-weight-semibold">
                       <Link
                         to={`/memos${post.fields.slug}`}
-                        className="episode-link"
+                        className="memo-title-compact episode-link"
                       >
                         {episodeTitle}
                       </Link>
                     </h2>
+                    <p className="is-uppercase is-size-7 mb-4">
+                      Posted: {post.frontmatter.date} &#x2f;&#x2f; Filed under:{' '}
+                      {post.frontmatter.tags.map(tag => {
+                        return (
+                          <span key={tag} className="tag mr-2">
+                            <Link to={`/tags/${tag}`} className="is-uppercase">
+                              {tag}
+                            </Link>
+                          </span>
+                        )
+                      })}
+                    </p>
                   </div>
                 </div>
                 <div className="column is-vcentered">
@@ -48,14 +61,12 @@ const PostsByTagList = ({ data, pageContext }) => {
                       </a>
                       <track kind="captions" label={episodeTitle} />
                     </audio>
-                    <p>
-                      <strong>Show Notes: </strong>
-                      {post.excerpt}{' '}
-                      <strong>
+                    <p className="is-size-7 py-2 has-text-right">
+                      <span className="is-uppercase has-text-weight-medium tag">
                         <Link to={`/memos${post.fields.slug}`}>
-                          [Read more...]
+                          Accompanying Notes...
                         </Link>
-                      </strong>
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -64,6 +75,7 @@ const PostsByTagList = ({ data, pageContext }) => {
           </>
         )
       })}
+
       {!isFirst && (
         <Link
           to={`/tags/${tagName}/${prevPage}`}
