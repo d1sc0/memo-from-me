@@ -29,7 +29,7 @@ const ContactPage = () => {
     setServerState({ submitting: true })
     axios({
       method: 'post',
-      url: 'https://getform.io/f/ede8d538-0d23-44d3-ae26-a9a0111997fe',
+      url: 'https://getform.io/f/edd4e1ae-fcdd-419b-876d-c689ab2f477e',
       data: new FormData(form),
     })
       .then(r => {
