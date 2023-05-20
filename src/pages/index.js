@@ -102,7 +102,7 @@ const HomePage = ({ data }) => {
           </a>
         </div>
         <div className="column">
-          <a href="https://open.spotify.com/show/4KBoGQIiwmO4ZEE6rdNSGh">
+          <a href="https://open.spotify.com/show/453GiQnxqnF4x25tIAAuRz">
             <button className="button is-black is-medium is-fullwidth has-text-weight-semibold">
               <span className="icon">
                 <FaSpotify />

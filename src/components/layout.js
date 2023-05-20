@@ -99,7 +99,7 @@ const Layout = ({ children }) => {
           </a>
 
           <a
-            href="https://open.spotify.com/show/4KBoGQIiwmO4ZEE6rdNSGh"
+            href="https://open.spotify.com/show/453GiQnxqnF4x25tIAAuRz"
             title="find us on spotify"
           >
             <FaSpotify size="1.9rem" />
