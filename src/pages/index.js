@@ -18,7 +18,7 @@ const HomePage = ({ data }) => {
       <div className="section px-0 pt-0 pb-5">
         <div className="columns">
           {/* is-reversed-mobile */}
-          <div className="column is-two-fifths">
+          <div className="column is-two-fifths p-4 pl-0">
             <StaticImage
               alt="memo from me!"
               src="../images/memo-from-me-square.jpg"
