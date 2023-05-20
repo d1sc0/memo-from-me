@@ -21,7 +21,7 @@ const HomePage = ({ data }) => {
           <div className="column is-two-fifths">
             <StaticImage
               alt="memo from me!"
-              src="../images/memo-from-me-square.png"
+              src="../images/memo-from-me-square.jpg"
               className="rounded-corners"
             />
           </div>
