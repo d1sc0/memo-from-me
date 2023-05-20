@@ -16,11 +16,10 @@ Memo From Me
 
 - ~~Finish logo and graphics~~ done (for now)
 - ~~create twitter and insta accounts~~ done
-- update all social links
+- ~~update all social links~~ done
+- ~~style episode/memo lists page~~ done
 - update contact form page destination
 - re-write about page and update short descriptions
-- style episode/memo lists page
-- finish tweaking indivdual posts pages
 - update the 404 page
 - Test podcast feed
 - validate feeds with services (google, apple, spotify)
