@@ -18,16 +18,15 @@ Memo From Me
 - ~~create twitter and insta accounts~~ done
 - ~~update all social links~~ done
 - ~~style episode/memo lists page~~ done
-- update contact form page destination
-- re-write about page and update short descriptions
-- update the 404 page
-- Test podcast feed
-- validate feeds with services (google, apple, spotify)
-- update subscribe links across site
+- ~~update contact form page destination~~ done
+- ~~Test podcast feed~~ done
+- re-write about page
 - hook up some simple analytics
-- Create episodes / lose dummy episodes
+- validate feeds with services (google, apple, ~~spotify~~)
+- update subscribe links across site
 
 ## Maybe things for later (Roadmap)
 
+- - update the 404 page
 - Go through and tidy up styles sheet. Selectively import bulma features based on use.
 - Improve contact form - error handling and validation
