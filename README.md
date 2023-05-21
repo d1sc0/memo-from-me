@@ -20,8 +20,8 @@ Memo From Me
 - ~~style episode/memo lists page~~ done
 - ~~update contact form page destination~~ done
 - ~~Test podcast feed~~ done
+- ~~hook up basic analytics~~ done
 - re-write about page
-- hook up some simple analytics
 - validate feeds with services (google, apple, ~~spotify~~)
 - update subscribe links across site
 
