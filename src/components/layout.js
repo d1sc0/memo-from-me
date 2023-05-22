@@ -68,8 +68,8 @@ const Layout = ({ children }) => {
         </div>
       </nav>
 
-      <section class="section px-4">
-        <div class="container is-max-widescreen">
+      <section className="section px-4">
+        <div className="container is-max-widescreen">
           <div className="">{children}</div>
         </div>
       </section>

@@ -9,7 +9,8 @@ episodeSeconds: 617
 episodeNumber: 1
 socialImage: '../images/memo-from-me-square.jpg'
 postImages:
-  - '../images/post-images/podcast-unsplash.jpg'
+  - '../images/post-images/1-countryside.jpg'
+  - '../images/post-images/1-sheep.jpg'
 ---
 
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
@@ -22,13 +23,13 @@ Virum temerarius dirae, crura mentis; tua Mysum miracula sententia vitiatur
 rates domi contingere florem: nunc. Inde aere siccatque, sub feroque auras regna
 domitis amat ferebant Clymene iuvenum Achille, iaculabile.
 
-<div className="">
-  <GatsbyImage
-    alt="Just a boy scremaing into a microphone!"
-    image={getImage(props.data.mdx.frontmatter.postImages[0])}
-    className="imageRight"
-  />
-</div>
+{' '}
+
+<GatsbyImage
+  alt="stunning views of the dorset countryside as taken from the ramparts of an iron age hill fort!"
+  image={getImage(props.data.mdx.frontmatter.postImages[0])}
+  className="imageRight"
+/>
 
 ## Hastae concresse cadunt fidissima fraternis sorores carentem
 
@@ -45,3 +46,9 @@ urbem glomerataque ille contigit ambitae uno nutat contulit virent. Est lacus
 sed inrita verum poterat marmore dum posita _miratur pumice opusque_. Et me spes
 herbis primus _Caenea_ Atlante dum quaeque tenebit illa. Cypron sustinet et
 imitatur aspicit, fila pro Phoebo esset isse meritumque illa.
+
+<GatsbyImage
+  alt="sheep also seen on my memo recording walk"
+  image={getImage(props.data.mdx.frontmatter.postImages[1])}
+  className="imageFull"
+/>

@@ -14,6 +14,11 @@ const AboutPage = () => {
       />
       <h1 className="title is-size-2">About the show</h1>
       <div className="content">
+        <StaticImage
+          alt="Stuart Mackenzie - host, producer, researcher, marketing manager and web developer"
+          src="../images/page-images/podcast-image.jpg"
+          className="imageRight"
+        />
         <p>
           <strong className="highlight">
             A podcast of voice memos shared openly for those that want or need
@@ -26,9 +31,9 @@ const AboutPage = () => {
         </p>
         <p>
           1. When humans record their voices for an audience to consume{' '}
-          <Link to="https://www.collinsdictionary.com/dictionary/english/asynchronous">
+          <a href="https://www.collinsdictionary.com/dictionary/english/asynchronous">
             asynchronously
-          </Link>{' '}
+          </a>{' '}
           (answering machines, voice notes) and without conscious
           preparation(scripts, guides, prompts) that the results can often be
           interesting, humorous, odd, rambling and informative to an extent
@@ -42,18 +47,10 @@ const AboutPage = () => {
         <p>
           You can hear me ramble on about the premise and inspiration for the
           show in my first memo called{' '}
-          <Link to="https://memofrom.me/memos/1-start-explaining/">
-            'Start explaining'
-          </Link>
-          .
+          <Link to="/memos/1-start-explaining/">'Start explaining'</Link>.
         </p>
         <h3>Ways you can get involved</h3>
         <p>
-          <StaticImage
-            alt="Stuart Mackenzie - host, producer, researcher, marketing manager and web developer"
-            src="../images/page-images/stuart-mackenzie.jpg"
-            className="imageRight"
-          />
           <strong className="highlight">
             1. Listen, Subscribe, Share, Comment
           </strong>{' '}
@@ -78,7 +75,7 @@ const AboutPage = () => {
         </p>
         <p>
           You can find more about me on my{' '}
-          <Link to="https://hellostu.xyz/about">personal site and blog.</Link>
+          <a href="https://hellostu.xyz/about">personal site and blog.</a>
         </p>
         <p>
           I’m the creator, producer, marketing manager and web developer for
