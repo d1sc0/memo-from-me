@@ -23,8 +23,9 @@ Memo From Me
 - ~~hook up basic analytics~~ done
 - ~~validate feeds with services (google, apple, spotify)~~ done
 - ~~update subscribe links across site~~ done
-- re-write about page and show notes
-- fix social images/seo component
+- ~~re-write about page~~ done
+- ~~fix social images/seo component~~ done
+- update show notes for episode 1 and 2
 
 ## Maybe things for later (Roadmap)
 
