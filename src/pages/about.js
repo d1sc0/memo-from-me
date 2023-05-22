@@ -17,7 +17,7 @@ const AboutPage = () => {
         <StaticImage
           alt="Stuart Mackenzie - host, producer, researcher, marketing manager and web developer"
           src="../images/page-images/podcast-image.jpg"
-          className="imageRight"
+          className="imageRight smaller"
         />
         <p>
           <strong className="highlight">
