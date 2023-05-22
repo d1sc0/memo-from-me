@@ -86,13 +86,13 @@ const Layout = ({ children }) => {
             <FaInstagram size="1.9rem" />
           </a>
           <a
-            href="https://podcasts.apple.com/gb/podcast/another-talk-show/id1551385867"
+            href="https://podcasts.apple.com/us/podcast/memo-from-me/id1688887767"
             title="find us on apple podcasts"
           >
             <FaPodcast size="1.9rem" />
           </a>
           <a
-            href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbm90aGVydGFsay5zaG93L3BvZGNhc3QueG1s"
+            href="https://podcasts.google.com/feed/aHR0cHM6Ly9tZW1vZnJvbS5tZS9wb2RjYXN0LnhtbA"
             title="find us on google podcasts"
           >
             <SiGooglepodcasts size="1.9rem" />

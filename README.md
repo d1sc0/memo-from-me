@@ -21,9 +21,9 @@ Memo From Me
 - ~~update contact form page destination~~ done
 - ~~Test podcast feed~~ done
 - ~~hook up basic analytics~~ done
-- re-write about page
-- validate feeds with services (google, apple, ~~spotify~~)
-- update subscribe links across site
+- ~~validate feeds with services (google, apple, spotify)~~ done
+- ~~update subscribe links across site~~ done
+- re-write about page and show notes
 
 ## Maybe things for later (Roadmap)
 

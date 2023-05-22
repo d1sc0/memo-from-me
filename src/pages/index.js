@@ -82,7 +82,7 @@ const HomePage = ({ data }) => {
       </div>
       <div className="columns mb-0">
         <div className="column">
-          <a href="https://podcasts.apple.com/gb/podcast/another-talk-show/id1551385867">
+          <a href="https://podcasts.apple.com/us/podcast/memo-from-me/id1688887767">
             <button className="button is-black is-medium is-fullwidth has-text-weight-semibold">
               <span className="icon">
                 <FaPodcast />
@@ -92,7 +92,7 @@ const HomePage = ({ data }) => {
           </a>
         </div>
         <div className="column">
-          <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbm90aGVydGFsay5zaG93L3BvZGNhc3QueG1s">
+          <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9tZW1vZnJvbS5tZS9wb2RjYXN0LnhtbA">
             <button className="button is-black is-medium is-fullwidth has-text-weight-semibold">
               <span className="icon">
                 <SiGooglepodcasts />
