@@ -107,7 +107,7 @@ module.exports = {
             {
               'itunes:image': {
                 _attr: {
-                  href: 'https://memofrom.me/mfm_cover_art.jpg',
+                  href: 'https://memofrom.me/mfm_cover.jpg',
                 },
               },
             },
