@@ -13,7 +13,6 @@ Memo From Me
 - ~~move fonts to local~~ done
 - ~~update to latest version of Gatsby~~ - done
 - ~~adding tag pages~~ done
-
 - ~~Finish logo and graphics~~ done (for now)
 - ~~create twitter and insta accounts~~ done
 - ~~update all social links~~ done
@@ -25,7 +24,7 @@ Memo From Me
 - ~~update subscribe links across site~~ done
 - ~~re-write about page~~ done
 - ~~fix social images/seo component~~ done
-- update show notes for episode 1 and 2
+- ~~update show notes for episode 1 and 2~~ done
 
 ## Maybe things for later (Roadmap)
 
