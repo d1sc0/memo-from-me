@@ -28,6 +28,8 @@ Memo From Me
 
 ## Maybe things for later (Roadmap)
 
-- - update the 404 page
+- add google anyalytics and maybe hotjar tracking look at https://www.gatsbyjs.com/plugins/gatsby-plugin-gdpr-cookies/
+  and https://www.gatsbyjs.com/plugins/gatsby-cookie-notice/?=cookie#gatsby-cookie-notice
+- update the 404 page
 - Go through and tidy up styles sheet. Selectively import bulma features based on use.
 - Improve contact form - error handling and validation
