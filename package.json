@@ -35,6 +35,7 @@
     "sass": "^1.62.1"
   },
   "devDependencies": {
+    "gatsby-plugin-simple-analytics": "^1.0.4",
     "prettier": "^2.8.8"
   },
   "license": "0BSD",

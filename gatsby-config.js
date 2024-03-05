@@ -29,6 +29,15 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-simple-analytics',
+      options: {
+        trackPageViews: true,
+        events: true,
+        eventsGlobal: 'sa_event',
+        ignorePages: ['pathname'],
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
